@@ -167,7 +167,7 @@ interface IPropsSwipeRow<T> {
 	 * TranslateX value for the slide out preview animation
 	 * Default: 0.5 * props.rightOpenValue
 	 */
-	previewOpenValue: number;
+	previewOpenValue: number[];
 	/**
 	 * The dx value used to detect when a user has begun a swipe gesture
 	 */
@@ -428,7 +428,7 @@ interface IPropsSwipeListView<T> {
 	 * TranslateX value for the slide out preview animation
 	 * Default: 0.5 * props.rightOpenValue
 	 */
-	previewOpenValue: number;
+	previewOpenValue: number[];
 	/**
 	 * Friction for the open / close animation
 	 */
