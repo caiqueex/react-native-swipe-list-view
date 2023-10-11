@@ -36,7 +36,7 @@ export type SwipeRowPropsType = {
     previewDuration?: number,
     previewRepeat?: boolean,
     previewRepeatDelay?: number,
-    previewOpenValue?: number,
+    previewOpenValue?: number[],
     directionalDistanceChangeThreshold?: number,
     swipeToOpenPercent?: number,
     swipeToOpenVelocityContribution?: number,
@@ -53,8 +53,8 @@ export type SwipeRowPropsType = {
     children: React.Node,
     item?: any,
     onRowPress?: Function,
-    previewOpenDelay?: number[],
-    previewOpenValue?: number,
+    previewOpenDelay?: number,
+    previewOpenValue?: number[],
 };
 
 export type SwipeRowStateType = {
@@ -110,8 +110,8 @@ export type SwipeListPropsType = {
     previewDuration?: number,
     previewRepeat?: boolean,
     previewRepeatDelay?: number,
-    previewOpenDelay: number[],
-    previewOpenValue: number,
+    previewOpenDelay: number,
+    previewOpenValue: number[],
     friction?: number,
     tension?: number,
     restSpeedThreshold?: number,
