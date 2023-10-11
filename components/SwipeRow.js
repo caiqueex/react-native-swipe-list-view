@@ -1,10 +1,10 @@
 'use strict';
 
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import {
-    Dimensions,
     Animated,
+    Dimensions,
     PanResponder,
     StyleSheet,
     TouchableOpacity,
@@ -218,7 +218,7 @@ class SwipeRow extends Component {
             return Animated.sequence([
                   Animated.timing(this._translateX, {
                     toValue: toValue[0],
-                    duration: this.props.previewDuration * 3,
+                    duration: 800,
                     useNativeDriver: this.props.useNativeDriver,
                   }),
                   Animated.timing(this._translateX, {
@@ -263,12 +263,12 @@ class SwipeRow extends Component {
 
     doFullAnimation() {
         const previewOpenValue =
-            this.props.previewOpenValue || this.props.rightOpenValue * 0.5;
+            this.props.previewOpenValue || [this.props.rightOpenValue * 0.5];
         return this.getPreviewAnimation(
             previewOpenValue,
             this.props.previewOpenDelay
         ).start(() => {
-            this.getPreviewAnimation(0, PREVIEW_CLOSE_DELAY).start(() => {
+            this.getPreviewAnimation([0], PREVIEW_CLOSE_DELAY).start(() => {
                 this.props.onPreviewEnd && this.props.onPreviewEnd();
             });
         });
