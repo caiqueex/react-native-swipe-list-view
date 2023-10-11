@@ -218,12 +218,12 @@ class SwipeRow extends Component {
             return Animated.sequence([
                   Animated.timing(this._translateX, {
                     toValue: toValue[0],
-                    duration: 800,
+                    duration: this.props.previewOpenDelay,
                     useNativeDriver: this.props.useNativeDriver,
                   }),
                   Animated.timing(this._translateX, {
                     toValue: toValue[1],
-                    duration: this.props.previewDuration,
+                    duration: this.props.previewOpenDelay,
                     useNativeDriver: this.props.useNativeDriver,
                   }),
                 ]);
