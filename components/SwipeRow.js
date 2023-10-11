@@ -214,12 +214,27 @@ class SwipeRow extends Component {
     }
 
     getPreviewAnimation(toValue, delay) {
-        return Animated.timing(this._translateX, {
-            duration: this.props.previewDuration,
-            toValue,
-            delay,
-            useNativeDriver: this.props.useNativeDriver,
-        });
+        if(toValue && toValue.length === 2) {
+            return Animated.sequence([
+                  Animated.timing(this._translateX, {
+                    toValue: toValue[0],
+                    duration: this.props.previewDuration * 3,
+                    useNativeDriver: this.props.useNativeDriver,
+                  }),
+                  Animated.timing(this._translateX, {
+                    toValue: toValue[1],
+                    duration: this.props.previewDuration,
+                    useNativeDriver: this.props.useNativeDriver,
+                  }),
+                ]);
+        } else {
+            return Animated.timing(this._translateX, {
+                duration: this.props.previewDuration,
+                toValue: toValue[0],
+                delay,
+                useNativeDriver: this.props.useNativeDriver,
+            });
+        }
     }
 
     onContentLayout(e) {
@@ -849,7 +864,7 @@ SwipeRow.propTypes = {
      * TranslateX value for the slide out preview animation
      * Default: 0.5 * props.rightOpenValue
      */
-    previewOpenValue: PropTypes.number,
+    previewOpenValue: PropTypes.array,
     /**
      * The dx value used to detect when a user has begun a swipe gesture
      */
