@@ -630,7 +630,7 @@ SwipeListView.propTypes = {
      * TranslateX value for the slide out preview animation
      * Default: 0.5 * props.rightOpenValue
      */
-    previewOpenValue: PropTypes.number,
+    previewOpenValue: PropTypes.array,
     /**
      * Friction for the open / close animation
      */
