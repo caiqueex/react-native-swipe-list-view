@@ -75,6 +75,10 @@ interface IPropsSwipeRow<T> {
 	 */
 	stopRightSwipe: number;
 	/**
+	 * Children components like visible and hidden components
+	 */
+	children: ReactNode;
+	/**
 	 * Friction for the open / close animation
 	 */
 	friction: number;
