@@ -19,6 +19,10 @@ interface IPropsSwipeRow<T> {
 	 */
 	swipeGestureBegan(): void;
 	/**
+	 * React children to use with back row and front row.
+	 */
+	children: ReactNode;
+	/**
 	 * Called when user has ended their swipe gesture
 	 */
 	swipeGestureEnded(swipeKey: string, data: SwipeGestureEndedData): void;
